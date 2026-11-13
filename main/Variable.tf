@@ -4,7 +4,7 @@ variable "filename" {
 }
 
 variable "content" {
-  default = "we love pets ${random_pet.server.id}"
+  default = "we love pets"
   type = string
 }
 

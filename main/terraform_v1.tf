@@ -1,6 +1,6 @@
 resource "local_file" "pet" {
     filename = var.filename
-    content = var.content
+    content = "we love pets ${random_pet.server.id}"
 }
 
 resource "random_pet" "server" {
