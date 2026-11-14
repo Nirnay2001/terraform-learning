@@ -5,6 +5,7 @@ resource "local_file" "pet" {
     file_permission = 0777
     lifecycle {
       create_before_destroy = true
+      prevent_destroy = true
     }
 }
 
