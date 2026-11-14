@@ -9,3 +9,8 @@ resource "random_pet" "server" {
     length = var.length
     separator = var.separator
 }
+
+output "pet_name" {
+  value = random_pet.server.id
+  description = "This is the name of the pet"
+}
