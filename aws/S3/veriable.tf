@@ -1,7 +1,9 @@
 variable "bucket_name" {
-  default = "maro-east-1-test"
+    
+    default = "mark-ufc-v1"
 }
 
 variable "user-group" {
   default = "admin-group"
 }
+
