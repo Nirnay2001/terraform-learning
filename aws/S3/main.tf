@@ -15,7 +15,15 @@ data "aws_iam_group" "admin_group" {
   group_name = "admin-group"
 }
 
-resource "aws_s3_bucket_policy" "bucket_policy" {
-  bucket = aws_s3_bucket.create_bucket.id
-  policy = file("bucket_policy.json")
+resource "aws_iam_policy" "group_s3_policy" {
+  name = "admin-group-s3-policy"
+
+  policy = templatefile("bucket_policy.json", {
+    bucket_name = var.bucket_name
+  })
+}
+
+resource "aws_iam_group_policy_attachment" "group_attachment" {
+  group      = "admin-group"
+  policy_arn = aws_iam_policy.group_s3_policy.arn
 }
