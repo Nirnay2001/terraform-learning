@@ -1,5 +1,3 @@
-
-
 resource "aws_iam_user" "admin_user" {
   name = var.users[count.index]
   count = length(var.users)
@@ -13,7 +11,7 @@ resource "aws_iam_policy" "adminuser" {
   policy = file("admin_policy.json")
 }
 
-resource "aws_iam_user_policy_attachment" "Alen-admin-acces" {
+resource "aws_iam_user_policy_attachment" "admin-access" {
   user = aws_iam_user.admin_user.name
   policy_arn = aws_iam_policy.adminuser.arn
 }
