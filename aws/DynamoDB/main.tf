@@ -10,5 +10,12 @@ resource "aws_dynamodb_table" "employee_table" {
 resource "aws_dynamodb_table_item" "add_item" {
   table_name = aws_dynamodb_table.employee_table.name
   hash_key = aws_dynamodb_table.employee_table.hash_key
-  item = file("data.json")
+  item = <<EOF
+    {
+        "emp_ID": {"N":1},
+        "name": {"S":"Raj"},
+        "city": {"S":"Kolkata"},
+        "Role": {"S":"Developer"}
+    }
+    EOF
 }
