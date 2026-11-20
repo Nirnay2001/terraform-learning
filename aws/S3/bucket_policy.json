@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+        "aciton": "*",
+        "Effect": "Allow",
+        "Resource": "arn:aws:s3:::${var.bucket_name}/*",
+        "Principal": {
+            "AWS": [
+                "${aws_iam_user.admin_user.arn}"
+            ]
+        }
+    }
+  ]
+}
