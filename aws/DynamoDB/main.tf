@@ -12,7 +12,7 @@ resource "aws_dynamodb_table_item" "add_item" {
   hash_key = aws_dynamodb_table.employee_table.hash_key
   item = <<EOF
     {
-        "emp_ID": {"N":1},
+        "emp_ID": {"N": "1"},
         "name": {"S":"Raj"},
         "city": {"S":"Kolkata"},
         "Role": {"S":"Developer"}
