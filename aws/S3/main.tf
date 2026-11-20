@@ -27,3 +27,10 @@ resource "aws_iam_group_policy_attachment" "group_attachment" {
   group      = "admin-group"
   policy_arn = aws_iam_policy.group_s3_policy.arn
 }
+
+resource "aws_s3_bucket" "create_bucket" {
+    bucket = "terraform-slate-backend"
+    tags = {
+        description = "This is a test bucket"
+    }
+}
