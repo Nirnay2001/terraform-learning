@@ -1,6 +1,6 @@
 {
-    "emp_ID": 1,
-    "name": "Raj",
-    "city": "Kolkata",
-    "Role": "Developer"
+    "emp_ID": {"N":1},
+    "name": {"S":"Raj"},
+    "city": {"S":"Kolkata"},
+    "Role": {"S":"Developer"}
 }
