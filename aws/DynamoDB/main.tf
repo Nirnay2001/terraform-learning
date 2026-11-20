@@ -1,6 +1,7 @@
 resource "aws_dynamodb_table" "employee_table" {
-  name = var.table_name
-  hash_key = var.Hash_Key
+  name         = var.table_name
+  hash_key     = var.Hash_Key
+  billing_mode = "PAY_PER_REQUEST"
   
   attribute {
     name = var.Hash_Key
