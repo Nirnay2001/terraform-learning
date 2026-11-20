@@ -2,14 +2,12 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-        "Action": "*",
-        "Effect": "Allow",
-        "Resource": "arn:aws:s3:::${var.bucket_name}/*",
-        "Principal": {
-            "AWS": [
-                "arn:aws:iam::474717635696:group/admin-group"
-            ]
-        }
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "arn:aws:s3:::${bucket_name}/*",
+      "Principal": {
+        "AWS": "arn:aws:iam::474717635696:root"
+      }
     }
   ]
 }
