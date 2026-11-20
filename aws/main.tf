@@ -1,13 +1,13 @@
 
 
 resource "aws_iam_user" "admin_user" {
-  name = "Alen"
+  name = var.users[count.index]
+  count = length(var.users)
   tags = {
     Description = "Team lead"
   }
   
 }
-
 resource "aws_iam_policy" "adminuser" {
   name = "AdminUsers"
   policy = file("admin_policy.json")
