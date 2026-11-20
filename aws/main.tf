@@ -7,7 +7,7 @@ resource "aws_iam_user" "admin_user" {
   
 }
 resource "aws_iam_policy" "adminuser" {
-  name = "AdminUsers"
+  name = aws_iam_user.admin_user.name
   policy = file("admin_policy.json")
 }
 
