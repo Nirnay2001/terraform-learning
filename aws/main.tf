@@ -7,11 +7,12 @@ resource "aws_iam_user" "admin_user" {
   
 }
 resource "aws_iam_policy" "adminuser" {
-  name = aws_iam_user.admin_user.name
+  name   = "admin-policy"
   policy = file("admin_policy.json")
 }
 
 resource "aws_iam_user_policy_attachment" "admin-access" {
-  user = aws_iam_user.admin_user.name
+  count      = length(var.users)
+  user       = aws_iam_user.admin_user[count.index].name
   policy_arn = aws_iam_policy.adminuser.arn
 }
