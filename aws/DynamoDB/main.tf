@@ -1,10 +1,16 @@
 resource "aws_dynamodb_table" "employee_table" {
   name = var.table_name
   hash_key = var.Hash_Key
+  billing_mode = "PROVISIONED"
   attribute {
     name = var.Hash_Key
     type = "N"
   }
+  provisioned_throughput {
+    read_capacity  = 1
+    write_capacity = 1
+  }
+  
 }
 
 resource "aws_dynamodb_table_item" "add_item" {
