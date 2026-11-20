@@ -12,7 +12,7 @@ resource "aws_s3_object" "upload_file" {
 }
 
 data "aws_iam_group" "admin_group" {
-  group_name = "admin-group"
+  group_name = var.user-group
 }
 
 resource "aws_iam_policy" "group_s3_policy" {
