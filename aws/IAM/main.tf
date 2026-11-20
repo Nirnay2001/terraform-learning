@@ -16,3 +16,7 @@ resource "aws_iam_user_policy_attachment" "admin-access" {
   user       = aws_iam_user.admin_user[count.index].name
   policy_arn = aws_iam_policy.adminuser.arn
 }
+
+resource "aws_iam_group" "admin_group" {
+  name = "admin-group"
+}
