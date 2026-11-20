@@ -3,6 +3,6 @@ terraform {
     bucket = "terraform-slate-backend"
     key = "Dynamo/terraform.tfstate"
     region = "us-east-1"
-    dynamodb_table = "state-locking"
+    use_lockfile = true
   }
 }
