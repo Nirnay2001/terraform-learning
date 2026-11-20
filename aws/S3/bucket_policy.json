@@ -7,7 +7,7 @@
         "Resource": "arn:aws:s3:::${var.bucket_name}/*",
         "Principal": {
             "AWS": [
-                "${aws_iam_user.admin_user.arn}"
+                "arn:aws:iam::474717635696:group/admin-group"
             ]
         }
     }
