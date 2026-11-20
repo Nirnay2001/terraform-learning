@@ -2,7 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-        "aciton": "*",
+        "Action": "*",
         "Effect": "Allow",
         "Resource": "arn:aws:s3:::${var.bucket_name}/*",
         "Principal": {
