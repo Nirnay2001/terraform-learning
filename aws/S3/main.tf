@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "create_bucket" {
     }
 }
 
-resource "aws_s3_bucket_object" "upload_file" {
+resource "aws_s3_object" "upload_file" {
     content = file("test.txt")
     key = "test.txt"
     bucket = aws_s3_bucket.create_bucket.id
