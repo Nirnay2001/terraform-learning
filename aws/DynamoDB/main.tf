@@ -10,5 +10,5 @@ resource "aws_dynamodb_table" "employee_table" {
 resource "aws_dynamodb_table_item" "add_item" {
   table_name = aws_dynamodb_table.employee_table.name
   hash_key = aws_dynamodb_table.employee_table.hash_key
-  item = file("data.json")
+  item =  jsonencode(jsondecode(file("data.json")))
 }
